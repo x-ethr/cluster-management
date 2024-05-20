@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
     - repositories.yaml
     - deployment.yaml
+    - external-secrets-cluster-role.yaml
