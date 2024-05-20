@@ -2,19 +2,19 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-    name: external-secrets
-    namespace: flux-system
+    name: kyverno
+    namespace: kyverno
 spec:
     interval: 1m
-    url: https://charts.external-secrets.io
+    url: https://kyverno.github.io/kyverno
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-    name: external-secrets
-    namespace: flux-system
+    name: kyverno
+    namespace: kyverno
 spec:
     interval: 1m
     ref:
         branch: main
-    url: http://github.com/external-secrets/external-secrets
+    url: https://github.com/kyverno/kyverno
