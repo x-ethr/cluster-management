@@ -1,0 +1,24 @@
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: SecurityGroupRule
+metadata:
+    name: management-cluster-security-group-rule-egress
+spec:
+    forProvider:
+        region: us-east-2
+
+        self: false
+        description: "Cluster Control-Plane Outbound Access"
+        protocol: "-1"
+        fromPort: 0
+        toPort: 0
+
+        cidrBlocks:
+            -   "0.0.0.0/0"
+        ipv6CidrBlocks:
+            - "::/0"
+
+        type: "egress"
+
+        securityGroupIdRef:
+            name: management-cluster-security-group

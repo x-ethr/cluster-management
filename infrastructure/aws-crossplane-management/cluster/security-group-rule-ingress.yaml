@@ -1,0 +1,19 @@
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: SecurityGroupRule
+metadata:
+    name: management-cluster-security-group-rule-ingress
+spec:
+    forProvider:
+        region: us-east-2
+
+        self: true
+        description: "Node Groups to Cluster Control-Plane API"
+        protocol: "-1"
+        fromPort: 0
+        toPort: 0
+
+        type: "ingress"
+
+        securityGroupIdRef:
+            name: management-cluster-security-group
