@@ -16,4 +16,4 @@ spec:
         type: "ingress"
 
         securityGroupIdRef:
-            name: management-cluster-security-group
+            name: management-cluster-control-plane-security-group

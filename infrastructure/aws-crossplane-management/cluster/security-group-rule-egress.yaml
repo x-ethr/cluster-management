@@ -21,4 +21,4 @@ spec:
         type: "egress"
 
         securityGroupIdRef:
-            name: management-cluster-security-group
+            name: management-cluster-control-plane-security-group
