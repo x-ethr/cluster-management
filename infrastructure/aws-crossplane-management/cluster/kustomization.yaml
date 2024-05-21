@@ -9,4 +9,11 @@ resources:
     - cluster-iam-role-policy-attachment-eks-cluster.yaml
     - cluster-iam-role-policy-attachment-eks-vpc-resource-controller.yaml
 
-    - kubernetes-cluster.yaml
+    - eks-cluster.yaml
+
+    - eks-cluster-addon-amazon-cloudwatch-observability.yaml
+    - eks-cluster-addon-aws-ebs-csi-driver.yaml
+    - eks-cluster-addon-coredns.yaml
+    - eks-cluster-addon-eks-pod-identity-agent.yaml
+    - eks-cluster-addon-kube-proxy.yaml
+    - eks-cluster-addon-vpc-cni.yaml

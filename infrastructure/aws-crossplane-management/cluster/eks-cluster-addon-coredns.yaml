@@ -1,0 +1,37 @@
+# resource "aws_eks_addon" "addon" {
+#    for_each = data.aws_eks_addon_version.addon
+#
+#    addon_name    = each.value.addon_name
+#    cluster_name  = aws_eks_cluster.cluster.name
+#    addon_version = each.value.version
+#
+#    resolve_conflicts_on_create = "OVERWRITE"
+#    resolve_conflicts_on_update = "OVERWRITE"
+#
+#    depends_on = [aws_eks_node_group.node-group]
+#
+#    tags = merge({
+#        Name        = format("%s", each.value.addon_name)
+#        Version     = format("%s", each.value.version)
+#        K8s-Version = format("%s", each.value.kubernetes_version)
+#    }, {})
+#}
+
+---
+apiVersion: eks.aws.upbound.io/v1beta1
+kind: Addon
+metadata:
+    name: management-cluster-addon-coredns
+spec: # aws eks describe-addon-versions --kubernetes-version 1.29 --addon-name coredns --query 'addons[].addonVersions[].{Version: addonVersion, Defaultversion: compatibilities[0].defaultVersion}' --output table
+    forProvider:
+        region: us-east-2
+
+        addonName: "coredns"
+        clusterNameRef:
+            name: management-cluster
+        addonVersion: "v1.11.1-eksbuild.4"
+        resolveConflictsOnCreate: "OVERWRITE"
+        resolveConflictsOnUpdate: "OVERWRITE"
+
+        tags:
+            Name: "coredns"
