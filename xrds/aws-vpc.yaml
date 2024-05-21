@@ -1,0 +1,34 @@
+# resource "aws_vpc" "vpc" {
+#    cidr_block = var.cidr
+#
+#    assign_generated_ipv6_cidr_block = false
+#
+#    instance_tenancy = "default"
+#
+#    enable_dns_support                   = true
+#    enable_dns_hostnames                 = true
+#    enable_network_address_usage_metrics = false
+#
+#    tags = merge({}, {
+#        Name = format("%s-VPC", module.parameter.application)
+#    })
+#}
+# tolist([
+#  "10.0.0.0/20",
+#  "10.0.16.0/20",
+#  "10.0.32.0/20",
+#  "10.0.48.0/20",
+#])
+
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: VPC
+metadata:
+    name: vpc
+spec:
+    forProvider:
+        cidrBlock: 10.0.0.0/16
+        enableDnsHostnames: true
+        enableDnsSupport: true
+        enableNetworkAddressUsageMetrics: false
+        assignGeneratedIpv6CidrBlock: true
+        region: us-east-1
