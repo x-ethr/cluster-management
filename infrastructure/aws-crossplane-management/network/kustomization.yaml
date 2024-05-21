@@ -11,7 +11,10 @@ resources:
     - private-subnet-2.yaml
     - private-subnet-3.yaml
 
-    # - subnets-public.yaml
-    # - subnets-public.yaml
-    # - subnets-database.yaml
-    # - subnets-caching.yaml
+    - database-subnet-1.yaml
+    - database-subnet-2.yaml
+    - database-subnet-3.yaml
+
+    - caching-subnet-1.yaml
+    - caching-subnet-2.yaml
+    - caching-subnet-3.yaml
