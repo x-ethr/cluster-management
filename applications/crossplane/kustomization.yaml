@@ -4,4 +4,4 @@ resources:
     - repositories.yaml
     - deployment.yaml
     - aws-provider.yaml
-    - crs.yaml
+    - aws.yaml
