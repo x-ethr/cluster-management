@@ -2,8 +2,15 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
     - vpc.yaml
+
     - public-subnet-1.yaml
     - public-subnet-2.yaml
+    - public-subnet-3.yaml
+
+    - private-subnet-1.yaml
+    - private-subnet-2.yaml
+    - private-subnet-3.yaml
+
     # - subnets-public.yaml
     # - subnets-public.yaml
     # - subnets-database.yaml

@@ -1,0 +1,20 @@
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: Subnet
+metadata:
+    name: primary-workload-subnet-private-3
+spec:
+    forProvider:
+        region: us-east-2
+
+        availabilityZone: "us-east-2c"
+        cidrBlock: "10.0.32.0/20"
+        enableDns64: false
+        enableResourceNameDnsARecordOnLaunch: true
+        mapPublicIpOnLaunch: false
+
+        vpcIdRef:
+            name: primary-workload-vpc
+
+        tags:
+            Name: Primary-Management-Private-Subnet-3
