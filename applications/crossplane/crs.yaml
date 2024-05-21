@@ -6,7 +6,7 @@ metadata:
     namespace: flux-system
 spec:
     interval: 1m
-    path: ./infrastructure/crossplane-provider-aws
+    path: ./applications/crossplane/aws
     prune: true
     sourceRef:
         kind: GitRepository
