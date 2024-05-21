@@ -24,7 +24,7 @@ spec:
                     -   name: primary-workload-subnet-public-3
 
         roleArnRef:
-            name: management-cluster-control-plane-security-group
+            name: management-cluster-control-plane-iam-role
 
         tags:
             Name: Management-Cluster
