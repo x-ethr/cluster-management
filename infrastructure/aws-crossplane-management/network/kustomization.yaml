@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
     - vpc.yaml
     - public-subnet-1.yaml
+    - public-subnet-2.yaml
     # - subnets-public.yaml
     # - subnets-public.yaml
     # - subnets-database.yaml
