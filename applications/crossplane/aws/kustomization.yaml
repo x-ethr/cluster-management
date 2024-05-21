@@ -11,3 +11,5 @@ resources:
     - aws-sqs-provider.yaml
     - aws-ssm-provider.yaml
     - aws-provider-configuration.yaml
+
+    - imports.yaml
