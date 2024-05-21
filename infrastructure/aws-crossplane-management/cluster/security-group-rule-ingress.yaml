@@ -2,7 +2,7 @@
 apiVersion: ec2.aws.upbound.io/v1beta1
 kind: SecurityGroupRule
 metadata:
-    name: management-cluster-security-group-rule-ingress
+    name: management-cluster-control-plane-security-group-rule-ingress
 spec:
     forProvider:
         region: us-east-2
