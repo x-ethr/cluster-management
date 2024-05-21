@@ -29,3 +29,8 @@ spec:
         enableDnsSupport: true
         enableNetworkAddressUsageMetrics: false
         assignGeneratedIpv6CidrBlock: true
+
+        instanceTenancy: default
+
+        tags:
+            Name: "Primary-Management-VPC"
