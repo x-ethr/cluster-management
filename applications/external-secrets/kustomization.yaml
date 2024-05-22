@@ -5,4 +5,4 @@ resources:
     - repositories.yaml
     - crds.yaml
     - deployment.yaml
-    - crs.yaml
+    - resources.yaml

@@ -2,7 +2,7 @@
 
 A Kubernetes Secret must be created with the following specification:
 
-- Name: `aws-external-secrets-credentials`
+- Name: `aws-external-secrets-provider`
 - Namespace: `flux-system`
 - Type: `Opaque`
 - Fields:
