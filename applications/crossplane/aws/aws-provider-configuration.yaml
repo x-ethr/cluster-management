@@ -7,5 +7,5 @@ spec:
         source: Secret
         secretRef:
             namespace: flux-system
-            name: aws-crossplane-credentials
+            name: aws-crossplane-provider-credentials
             key: profile
