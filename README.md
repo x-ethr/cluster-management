@@ -4,12 +4,25 @@ Kubernetes GitOps for Management Cluster(s)
 
 ## New Cluster Provisioning
 
+*Local* - Create cluster.
+
+```bash
+kind create cluster --config "configuration.yaml"
+kubectl config set-context "$(printf "%s-kind" "kind")"
+```
+
+Bootstrap.
 ```bash
 flux bootstrap github --repository "https://github.com/iac-factory/cluster-management" \
     --owner "iac-factory" \
     --private "false" \
     --personal "false" \
     --path "clusters/local"
+```
+
+Sync local cluster repository's `vendors`.
+```bash
+git submodule update --remote --recursive
 ```
 
 Add `kustomization.yaml` to new cluster directory.
