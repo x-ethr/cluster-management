@@ -28,6 +28,7 @@ Update.
 git submodule foreach "git add . && git commit --message \"Git Submodule Update(s)\" && git push -u origin HEAD:main" 
 ```
 
+Sync.
 ```bash
 git submodule update --remote --recursive
 ```
