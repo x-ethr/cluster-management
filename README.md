@@ -2,6 +2,12 @@
 
 Kubernetes GitOps for Management Cluster(s)
 
+## Task-Board
+
+- [ ] Secure Grafana Installation
+    - [ ] Establish Independent Grafana Application 
+    - [ ] Remove `grafana.yaml` from `istio` Application
+
 ## New Cluster Provisioning
 
 *Local* - Create cluster.
