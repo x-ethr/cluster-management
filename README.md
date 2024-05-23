@@ -46,3 +46,7 @@ Update.
 ```bash
 git submodule foreach "git add . && git commit --message \"Git Submodule Update(s)\" && git push -u origin HEAD:main" 
 ```
+
+## References
+
+- https://kiali.io/docs/configuration/kialis.kiali.io/#example-cr
