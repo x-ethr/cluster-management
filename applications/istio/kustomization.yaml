@@ -10,3 +10,5 @@ resources:
     - istiod.yaml
     - istio-gateway.yaml
     - jaeger.yaml
+    - loki.yaml
+    - prometheus-operator.yaml
