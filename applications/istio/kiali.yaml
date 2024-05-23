@@ -104,7 +104,12 @@ data:
             istio:
                 root_namespace: istio-system
             tracing:
+                auth:
+                    type: none
                 enabled: true
+                in_cluster_url: "http://tracing.istio-system/jaeger" 
+                url: "http://localhost:16686"
+                use_grpc: true
         identity:
             cert_file: ""
             private_key_file: ""
