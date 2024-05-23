@@ -5,6 +5,13 @@ metadata:
     name: kiali
     namespace: flux-system
 spec:
+    dependsOn:
+        -   name: istio
+            namespace: flux-system
+        -   name: jaeger
+            namespace: flux-system
+        -   name: prometheus
+            namespace: flux-system
     interval: 1m
     path: ./applications/kiali
     prune: true

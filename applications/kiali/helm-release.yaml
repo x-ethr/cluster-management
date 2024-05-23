@@ -26,3 +26,25 @@ spec:
         crds: Create
         createNamespace: true
 ---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+    name: kiali-server
+    namespace: istio-system
+spec:
+    releaseName: kiali-server
+    targetNamespace: istio-system
+    interval: 1m
+    chart:
+        spec:
+            chart: kiali-server
+            sourceRef:
+                kind: HelmRepository
+                name: kiali
+                namespace: istio-system
+    values:
+        cr.spec.auth.strategy: anonymous
+    # Ref: https://fluxcd.io/docs/components/helm/api/#helm.toolkit.fluxcd.io/v2beta1.Install
+    install:
+        crds: Create
+        createNamespace: true

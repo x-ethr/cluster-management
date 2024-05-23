@@ -12,4 +12,3 @@ resources:
     - jaeger.yaml
     - loki.yaml
     - prometheus-operator.yaml
-    - kiali.yaml
