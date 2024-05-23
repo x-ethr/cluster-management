@@ -46,5 +46,6 @@ spec:
         auth.strategy: anonymous
     # Ref: https://fluxcd.io/docs/components/helm/api/#helm.toolkit.fluxcd.io/v2beta1.Install
     install:
+        replace: true
         crds: Create
         createNamespace: true
