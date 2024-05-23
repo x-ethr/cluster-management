@@ -5,6 +5,9 @@ metadata:
     name: istio
     namespace: flux-system
 spec:
+    dependsOn:
+        -   name: kiali
+            namespace: flux-system
     interval: 1m
     path: ./applications/istio
     prune: true
