@@ -113,7 +113,7 @@ data:
                 auth:
                     type: none
                 enabled: true
-                in_cluster_url: "http://tracing.istio-system/jaeger" 
+                in_cluster_url: "http://tracing.istio-system:16685/jaeger" 
                 url: "http://localhost:16686"
                 use_grpc: true
         identity:
