@@ -103,6 +103,12 @@ data:
                 enabled: true
             istio:
                 root_namespace: istio-system
+            grafana:
+                auth:
+                    type: none
+                enabled: true
+                in_cluster_url: "http://grafana.istio-system:3000"
+                url: "http://localhost:3000"
             tracing:
                 auth:
                     type: none
