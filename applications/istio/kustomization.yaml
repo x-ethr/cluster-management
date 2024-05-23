@@ -9,9 +9,8 @@ resources:
     - istio-base.yaml
     - istiod.yaml
     - istio-gateway.yaml
-    # - jaeger.yaml
+    - jaeger.yaml
     - loki.yaml
     - prometheus-operator.yaml
     - kiali.yaml
     - otel.yaml
-    - zipkin.yaml
