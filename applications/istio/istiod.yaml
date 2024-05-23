@@ -20,6 +20,9 @@ spec:
                 kind: HelmRepository
                 name: istio
                 namespace: istio-system
+    values:
+        meshConfig.accessLogFile: /dev/stdout
+        defaults.global.proxy.tracer: zipkin
     # Ref: https://fluxcd.io/docs/components/helm/api/#helm.toolkit.fluxcd.io/v2beta1.Install
     install:
         crds: Create
