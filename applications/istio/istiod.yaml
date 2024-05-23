@@ -21,8 +21,19 @@ spec:
                 name: istio
                 namespace: istio-system
     values:
-        meshConfig.accessLogFile: /dev/stdout
-        defaults.global.proxy.tracer: zipkin
+        defaults:
+            meshConfig:
+                enableTracing: true
+                accessLogFile: /dev/stdout
+                defaultConfig:
+                    tracingServiceName: APP_LABEL_AND_NAMESPACE
+                    tracing:
+                        zipkin:
+                            sampling: 100.0
+
+            global:
+                proxy:
+                    logLevel: info
     # Ref: https://fluxcd.io/docs/components/helm/api/#helm.toolkit.fluxcd.io/v2beta1.Install
     install:
         crds: Create
