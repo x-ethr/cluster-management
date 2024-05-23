@@ -21,8 +21,9 @@ spec:
                 name: external-secrets
                 namespace: flux-system
     values:
-        installCRDs: false # prevents race-conditions by allowing kustomize to handle the installation of crds
+        installCRDs: true # prevents race-conditions by allowing kustomize to handle the installation of crds
 
     # Ref: https://fluxcd.io/docs/components/helm/api/#helm.toolkit.fluxcd.io/v2beta1.Install
     install:
+        crds: Create
         createNamespace: true
