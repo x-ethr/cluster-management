@@ -17,6 +17,7 @@ spec:
                 kind: HelmRepository
                 name: kiali
                 namespace: istio-system
+
     values:
         cr.create: true
         cr.namespace: istio-system

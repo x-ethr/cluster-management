@@ -7,4 +7,3 @@ resources:
     - external-secrets.yaml
     - crossplane.yaml
     - istio.yaml
-    - kiali.yaml
