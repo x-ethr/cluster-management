@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
     - prometheus.yaml
     - kyverno.yaml
+    - cert-manager.yaml
     - external-secrets.yaml
     - crossplane.yaml
     - istio.yaml
