@@ -5,12 +5,12 @@ metadata:
     namespace: istio-system
     annotations:
         networking.istio.io/service-type: "ClusterIP"
-    labels:
-        app: api
-        version: v1
-        app.kubernetes.io/name: api
-        app.kubernetes.io/version: v1
-        sidecar.istio.io/inject: "true"
+    # labels:
+    #     app: api
+    #     version: v1
+    #     app.kubernetes.io/name: api
+    #     app.kubernetes.io/version: v1
+    #     sidecar.istio.io/inject: "true"
 spec:
     gatewayClassName: istio
     listeners:
