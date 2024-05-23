@@ -9,3 +9,4 @@ resources:
     - istio-base.yaml
     - istiod.yaml
     - istio-gateway.yaml
+    - ingress-gateway.yaml
