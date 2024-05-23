@@ -103,6 +103,9 @@ data:
                 enabled: true
             istio:
                 root_namespace: istio-system
+            prometheus:
+                url: "http://prometheus.istio-system:9090/"
+    
             grafana:
                 auth:
                     type: none
