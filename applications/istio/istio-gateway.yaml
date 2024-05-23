@@ -25,28 +25,28 @@ spec:
         disableWait: true
         crds: Create
         createNamespace: true
----
-apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
-metadata:
-    name: istio-egressgateway
-    namespace: istio-system
-spec:
-    releaseName: istio-egressgateway
-    targetNamespace: istio-system
-    interval: 1m
-    dependsOn:
-        - name: istiod
-          namespace: istio-system
-    chart:
-        spec:
-            chart: gateway
-            sourceRef:
-                kind: HelmRepository
-                name: istio
-                namespace: istio-system
-    # Ref: https://fluxcd.io/docs/components/helm/api/#helm.toolkit.fluxcd.io/v2beta1.Install
-    install:
-        disableWait: true
-        crds: Create
-        createNamespace: true
+#---
+#apiVersion: helm.toolkit.fluxcd.io/v2
+#kind: HelmRelease
+#metadata:
+#    name: istio-egressgateway
+#    namespace: istio-system
+#spec:
+#    releaseName: istio-egressgateway
+#    targetNamespace: istio-system
+#    interval: 1m
+#    dependsOn:
+#        - name: istiod
+#          namespace: istio-system
+#    chart:
+#        spec:
+#            chart: gateway
+#            sourceRef:
+#                kind: HelmRepository
+#                name: istio
+#                namespace: istio-system
+#    # Ref: https://fluxcd.io/docs/components/helm/api/#helm.toolkit.fluxcd.io/v2beta1.Install
+#    install:
+#        disableWait: true
+#        crds: Create
+#        createNamespace: true
