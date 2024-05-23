@@ -1,0 +1,23 @@
+# How to manage values files. Ref: https://fluxcd.io/docs/guides/helmreleases/#refer-to-values-inside-the-chart
+# How to inject values: https://fluxcd.io/docs/guides/helmreleases/#cloud-storage
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+    name: istio-base
+    namespace: istio-system
+spec:
+    releaseName: istio-base
+    targetNamespace: istio-system
+    interval: 1m
+    chart:
+        spec:
+            chart: base
+            sourceRef:
+                kind: HelmRepository
+                name: istio
+                namespace: istio-system
+    # Ref: https://fluxcd.io/docs/components/helm/api/#helm.toolkit.fluxcd.io/v2beta1.Install
+    install:
+        crds: Create
+        createNamespace: true
