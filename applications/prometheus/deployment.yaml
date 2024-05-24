@@ -9,6 +9,9 @@ spec:
     targetNamespace: prometheus
     interval: 1m
     chart:
+        metadata:
+            labels:
+                app.kubernetes.io/name: prometheus
         spec:
             chart: kube-prometheus-stack
             version: "58.5.1"
