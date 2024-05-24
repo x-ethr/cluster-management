@@ -7,3 +7,4 @@ resources:
     - external-secrets.yaml
     - crossplane.yaml
     - istio.yaml
+    - istio-addons.yaml
