@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
     name: observability
     annotations:
-        istio-injection: disabled
+        istio-injection: enabled
