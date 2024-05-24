@@ -2,8 +2,6 @@
 
 Kubernetes GitOps for Management Cluster(s)
 
-## Task-Board
-
 ## New Cluster Provisioning
 
 *Local* - Create cluster.
