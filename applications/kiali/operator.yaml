@@ -1,0 +1,34 @@
+# How to manage values files. Ref: https://fluxcd.io/docs/guides/helmreleases/#refer-to-values-inside-the-chart
+# How to inject values: https://fluxcd.io/docs/guides/helmreleases/#cloud-storage
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+    name: kiali-operator
+    namespace: kiali-operator
+spec:
+    releaseName: kiali-operator
+    targetNamespace: kiali-operator
+    interval: 1m
+    chart:
+        spec:
+            chart:  kiali-operator
+            sourceRef:
+                kind: HelmRepository
+                name: kiali
+                namespace: flux-system
+    values:
+        cr:
+            create: true
+            name: kiali
+            namespace: istio-system
+            spec:
+                auth:
+                    strategy: anonymous
+                external_services:
+                    grafana:
+                        in_cluster_url: "kube-prometheus-stack-prometheus.prometheus.svc.cluster.local:9090"
+
+    install:
+        crds: Create
+        createNamespace: true
