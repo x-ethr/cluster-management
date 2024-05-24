@@ -7,4 +7,5 @@ resources:
     - jaeger.yaml
     - kiali.yaml
     - loki.yaml
+    - prometheus.yaml
     - prometheus-operator.yaml
