@@ -27,28 +27,6 @@ spec:
                 accessLogFile: /dev/stdout
                 defaultConfig:
                     tracing: {}
-                extensionProviders:
-                    -   name: zipkin
-                        service: zipkin.istio-system.svc.cluster.local
-                        port: 9411
-                    -   name: otel-tracing
-                        opentelemetry:
-                            port: 4318
-                            service: opentelemetry-collector.observability.svc.cluster.local
-                            http:
-                                path: "/v1/traces"
-                                timeout: 5s
-                            resource_detectors:
-                                environment: { }
-                        envoyOtelAls:
-                            service: opentelemetry-collector.observability.svc.cluster.local
-                            port: 4317
-                        rootNamespace: istio-system
-                        trustDomain: cluster.local
-                    -   name: otel
-                        envoyOtelAls:
-                            service: opentelemetry-collector.observability.svc.cluster.local
-                            port: 4317
             global:
                 proxy:
                     logLevel: info

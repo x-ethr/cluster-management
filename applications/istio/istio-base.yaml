@@ -17,10 +17,6 @@ spec:
                 kind: HelmRepository
                 name: istio
                 namespace: istio-system
-#    values:
-#        kiali.enabled: true
-#        kiali.dashboard.grafanaURL: http://grafana.istio-system:3000
-    # Ref: https://fluxcd.io/docs/components/helm/api/#helm.toolkit.fluxcd.io/v2beta1.Install
     install:
         crds: Create
         createNamespace: true
