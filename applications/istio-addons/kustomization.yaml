@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
     - opentelemetry-namespace.yaml
     - opentelemetry.yaml
+    - opentelemetry-peer-authentication.yaml
     - grafana.yaml
     - jaeger.yaml
     - kiali.yaml
