@@ -29,8 +29,16 @@ spec:
                     tracingServiceName: APP_LABEL_AND_NAMESPACE
                     tracing:
                         zipkin:
+                            address: zipkin.istio-system:9411
                             sampling: 100.0
 
+                extensionProviders:
+                    -   name: otel
+                        envoyOtelAls:
+                            service: opentelemetry-collector.istio-system.svc.cluster.local
+                            port: 4317
+                        rootNamespace: istio-system
+                        trustDomain: cluster.local
             global:
                 proxy:
                     logLevel: info
