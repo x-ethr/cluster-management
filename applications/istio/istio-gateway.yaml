@@ -5,7 +5,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
     name: istio-ingressgateway
-    namespace: istio-system
+    namespace: istio-system # @TODO change to flux-system
 spec:
     releaseName: istio-ingressgateway
     targetNamespace: istio-system
