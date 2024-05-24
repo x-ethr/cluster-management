@@ -26,12 +26,11 @@ spec:
                 enableTracing: true
                 accessLogFile: /dev/stdout
                 defaultConfig:
-                    tracingServiceName: APP_LABEL_AND_NAMESPACE
-                    tracing:
-                        zipkin:
-                            address: zipkin.istio-system:9411
-                            sampling: 100.0
+                    tracing: {}
                 extensionProviders:
+                    -   name: zipkin
+                        service: zipkin.istio-system.svc.cluster.local
+                        port: 9411
                     -   name: otel-tracing
                         opentelemetry:
                             port: 4318
