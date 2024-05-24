@@ -31,9 +31,16 @@ spec:
                         zipkin:
                             address: zipkin.istio-system:9411
                             sampling: 100.0
-
                 extensionProviders:
                     -   name: otel
+                        opentelemetry:
+                            port: 4318
+                            service: opentelemetry-collector.istio-system.svc.cluster.local
+                            http:
+                                path: "/v1/traces"
+                                timeout: 5s
+                            resource_detectors:
+                                environment: { }
                         envoyOtelAls:
                             service: opentelemetry-collector.istio-system.svc.cluster.local
                             port: 4317
