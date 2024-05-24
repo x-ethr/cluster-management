@@ -21,6 +21,7 @@ data:
                 # Export to zipkin for easy querying
                 endpoint: http://zipkin.istio-system.svc:9411/api/v2/spans
             logging:
+                verbosity: detailed 
                 loglevel: debug
             jaeger:
                 endpoint: jaeger-collector.istio-system.svc.cluster.local:14250
@@ -40,6 +41,9 @@ data:
                 logs:
                     receivers: [ otlp ]
                     processors: [ batch ]
+                    exporters: [ logging ]
+                metrics:
+                    receivers: [ otlp ]
                     exporters: [ logging ]
                 traces:
                     receivers:
