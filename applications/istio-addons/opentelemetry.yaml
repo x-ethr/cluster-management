@@ -96,7 +96,6 @@ spec:
         metadata:
             labels:
                 app: opentelemetry-collector
-                sidecar.istio.io/inject: "false" # do not inject
         spec:
             containers:
                 -   command:
