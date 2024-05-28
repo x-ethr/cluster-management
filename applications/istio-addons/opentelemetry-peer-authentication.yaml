@@ -6,4 +6,4 @@ metadata:
     namespace: observability
 spec:
     mtls:
-        mode: PERMISSIVE
+        mode: STRICT
