@@ -8,4 +8,3 @@ resources:
     - crossplane.yaml
     - istio.yaml
     - istio-addons.yaml
-    - postgres.yaml
