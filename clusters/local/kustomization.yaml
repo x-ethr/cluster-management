@@ -5,6 +5,5 @@ resources:
     - kyverno.yaml
     - cert-manager.yaml
     - external-secrets.yaml
-    - crossplane.yaml
     - istio.yaml
     - istio-addons.yaml
