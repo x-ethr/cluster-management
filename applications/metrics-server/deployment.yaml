@@ -19,7 +19,9 @@ spec:
                 kind: HelmRepository
                 name: metrics-server
                 namespace: flux-system
-    values: {}
+    values:
+        args:
+            - "--kubelet-insecure-tls"
     install:
         crds: Create
         createNamespace: true
