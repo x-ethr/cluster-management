@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata: # @TODO  remove once HelmRelease kinds namespaces are changed to flux-system
-    name: istio-system
-    annotations:
-        istio-injection: enabled

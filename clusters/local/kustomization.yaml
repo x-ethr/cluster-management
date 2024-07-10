@@ -1,9 +1,32 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-    - prometheus.yaml
-    - kyverno.yaml
+    - flux-system
     - cert-manager.yaml
-    - external-secrets.yaml
     - istio.yaml
     - istio-addons.yaml
+    - kyverno.yaml
+    - metrics-server.yaml
+    - prometheus.yaml
+
+patches:
+    -   target:
+            kind: Deployment
+            name: source-controller
+            namespace: flux-system
+        patch: |
+            -   op: replace
+                path: /spec/template/spec/containers/0/resources/limits/memory
+                value: 512Mi
+            -   op: replace
+                path: /spec/template/spec/containers/0/resources/limits/cpu
+                value: 500m
+            -   op: add
+                path: /spec/template/spec/containers/0/args/-
+                value: --helm-cache-max-size=40
+            -   op: add
+                path: /spec/template/spec/containers/0/args/-
+                value: --helm-cache-ttl=60m
+            -   op: add
+                path: /spec/template/spec/containers/0/args/-
+                value: --helm-cache-purge-interval=5m

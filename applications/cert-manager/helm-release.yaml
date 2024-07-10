@@ -13,13 +13,21 @@ spec:
     chart:
         spec:
             chart: cert-manager
-            version: 1.14.5
+            version: 1.15.0
             sourceRef:
                 kind: HelmRepository
                 name: cert-manager
                 namespace: flux-system
     values:
-        installCRDs: true
+        crds:
+            enabled: true
+        resources:
+            request:
+                cpu: 10m
+                memory: 64Mi
+            limits:
+                cpu: 25m
+                memory: 128Mi
     # Ref: https://fluxcd.io/docs/components/helm/api/#helm.toolkit.fluxcd.io/v2beta1.Install
     install:
         crds: Create

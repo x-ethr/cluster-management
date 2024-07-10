@@ -5,21 +5,22 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
     name: istiod
-    namespace: istio-system # @TODO change to flux-system
+    namespace: flux-system
 spec:
     releaseName: istiod
     targetNamespace: istio-system
     interval: 1m
+    timeout: 10m
     dependsOn:
         - name: istio-base
-          namespace: istio-system
+          namespace: flux-system
     chart:
         spec:
             chart: istiod
             sourceRef:
                 kind: HelmRepository
                 name: istio
-                namespace: istio-system
+                namespace: flux-system
     values:
         defaults:
             meshConfig:
@@ -27,15 +28,27 @@ spec:
                 accessLogFile: /dev/stdout
                 defaultConfig:
                     tracing: {}
+                enablePrometheusMerge: true
                 extensionProviders:
                     -   name: otel-tracing
                         opentelemetry:
                             port: 4317
                             service: opentelemetry-collector.observability.svc.cluster.local
+                            resource_detectors:
+                                environment: {}
             global:
+                omitSidecarInjectorConfigMap: false
                 proxy:
+                    privileged: true
                     logLevel: info
+                    resources:
+                        limits:
+                            cpu: 250m
+                            memory: 512Mi
+                    tracer: "zipkin"
+
     # Ref: https://fluxcd.io/docs/components/helm/api/#helm.toolkit.fluxcd.io/v2beta1.Install
     install:
+        # disableWait: true
         crds: Create
         createNamespace: true

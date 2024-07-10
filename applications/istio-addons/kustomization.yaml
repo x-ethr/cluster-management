@@ -4,9 +4,6 @@ resources:
     - opentelemetry-namespace.yaml
     - opentelemetry.yaml
     - opentelemetry-peer-authentication.yaml
-    - grafana.yaml
     - jaeger.yaml
-    - kiali.yaml
-    - loki.yaml
-    - prometheus.yaml
-    - prometheus-operator.yaml
+    - kiali-operator
+    - monitors.yaml
