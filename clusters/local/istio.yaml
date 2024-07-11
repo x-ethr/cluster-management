@@ -8,6 +8,9 @@ spec:
     interval: 1m
     path: ./applications/istio
     prune: true
+    dependsOn:
+        -   name: metrics-server
+            namespace: flux-system
     sourceRef:
         kind: GitRepository
         name: flux-system
