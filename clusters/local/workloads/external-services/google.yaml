@@ -4,8 +4,8 @@ metadata:
     name: google
 spec:
     hosts:
-        - "*.google.com"
-        - "*.googleapis.com"
+        - "accounts.google.com"
+        - "oauth2.googleapis.com"
     location: MESH_EXTERNAL
     ports:
         - number: 443
