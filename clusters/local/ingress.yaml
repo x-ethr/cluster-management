@@ -9,7 +9,7 @@ spec:
     path: ./clusters/local/ingress
     prune: true
     dependsOn:
-        -   name: environments
+        -   name: workloads
             namespace: flux-system
     sourceRef:
         kind: GitRepository

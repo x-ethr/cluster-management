@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+    - telemetry.yaml
+    - server-passthrough-filter.yaml
+    - server-filter.yaml
+    - external-services
+    - development

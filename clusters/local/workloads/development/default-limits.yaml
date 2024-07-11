@@ -1,0 +1,15 @@
+# $ kubectl -n test describe pod | grep -A5 Limits
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+    name: default-container-limits
+spec:
+    limits:
+        -   type: Container
+            defaultRequest:
+                memory: 64Mi
+                cpu: 100m
+            default:
+                memory: 128Mi
+                cpu: 250m

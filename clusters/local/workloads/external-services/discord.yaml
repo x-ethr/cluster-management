@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1beta1
+kind: ServiceEntry
+metadata:
+    name: discord
+spec:
+    hosts:
+        - discord.com
+    location: MESH_EXTERNAL
+    ports:
+        - number: 443
+          name: https
+          protocol: TLS
+    resolution: DNS

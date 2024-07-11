@@ -1,0 +1,39 @@
+# How to manage values files. Ref: https://fluxcd.io/docs/guides/helmreleases/#refer-to-values-inside-the-chart
+# How to inject values: https://fluxcd.io/docs/guides/helmreleases/#cloud-storage
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+    name: istio-ingress-gateway
+    namespace: development
+spec:
+    releaseName: gateway
+    targetNamespace: development
+    interval: 1m
+    timeout: 10m
+    dependsOn:
+        -   name: istiod
+            namespace: flux-system
+    chart:
+        spec:
+            chart: gateway
+            sourceRef:
+                kind: HelmRepository
+                name: istio
+                namespace: flux-system
+    values:
+        labels:
+            version: v1
+        service:
+            type: NodePort
+        autoscaling:
+            enabled: true
+        resources:
+            limits:
+                cpu: 250m
+                memory: 512Mi
+    # Ref: https://fluxcd.io/docs/components/helm/api/#helm.toolkit.fluxcd.io/v2beta1.Install
+    install:
+        # disableWait: false
+        crds: Create
+        createNamespace: true
