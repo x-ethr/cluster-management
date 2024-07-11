@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
     - flux-system
     - cert-manager.yaml
+    - ingress.yaml
     - istio.yaml
     - istio-addons.yaml
     - kyverno.yaml
