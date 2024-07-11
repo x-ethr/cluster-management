@@ -20,7 +20,8 @@ spec:
                 name: metrics-server
                 namespace: flux-system
     values:
-        defaultArgs: []
+        defaultArgs:
+            - "--cert-dir=/tmp"
         args:
             - "--kubelet-insecure-tls"
             - "--kubelet-preferred-address-types=InternalIP,ExternalIP"
