@@ -10,6 +10,7 @@ resources:
     - metrics-server.yaml
     - prometheus.yaml
     - workloads.yaml
+    - keycloak.yaml
 
 patches:
     -   target:
