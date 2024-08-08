@@ -3,6 +3,5 @@ kind: Kustomization
 namespace: keycloak
 resources:
     - namespace.yaml
-    - repositories.yaml
     - deployment.yaml
-    - resources.yaml
+    - service.yaml
