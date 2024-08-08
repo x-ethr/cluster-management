@@ -6,4 +6,5 @@ resources:
     - repositories.yaml
     - istio-base.yaml
     - istiod.yaml
+    - ingress.yaml
     - egress.yaml
