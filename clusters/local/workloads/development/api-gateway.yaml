@@ -2,6 +2,8 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
     name: api-gateway
+    labels:
+        istio: gateway
 spec:
     selector:
         istio: gateway
