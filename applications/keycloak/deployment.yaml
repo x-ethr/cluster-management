@@ -19,6 +19,7 @@ spec:
                 app: keycloak
                 version: v1
                 service: keycloak
+                sidecar.istio.io/inject: "true"
         spec:
             containers:
                 - name: keycloak
