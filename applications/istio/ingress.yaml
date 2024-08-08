@@ -20,6 +20,8 @@ spec:
                 name: istio
                 namespace: flux-system
     values:
+        service:
+            type: None
         autoscaling:
             enabled: true
         resources:
